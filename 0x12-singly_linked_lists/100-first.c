@@ -1,23 +1,19 @@
 #include <stdio.h>
 
+void printMessage(void);
+
 /**
- * print_message - prints a message
+ * printMessage - prints a message
  */
-void print_message(void)
+void printMessage(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
 }
 
-/**
- * main - the entry point of the program
- *
- * Return: 0 on success
- */
 int main(void)
 {
-	print_message();
-
+	printMessage();
 	return (0);
 }
 
