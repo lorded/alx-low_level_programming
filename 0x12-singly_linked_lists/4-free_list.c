@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include "lists.h"
+
+/**
+ * free_list - function that frees a list_t list.
+ * @head: list_t that is going to be let free
+ */
+void free_list(list_t *head)
+{
+	list_t *temp;
+
+	while (head)
+
+	{
+	temp = head->next;
+	freelist(head->str);
+	freelist(head);
+	head = temp;
+	}
+}
+
