@@ -28,10 +28,10 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - Closes file descriptors.
+ * close_file_descriptor - Closes file descriptors.
  * @fd: The file descriptor to be closed.
  */
-void close_file(int fd)
+void close_file_descriptor(int fd)
 {
 	int results;
 
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	destination_file = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (source_file == -1 || r == -1)
+		if (source_file == -1 || read_results == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Unable to read from file %s\n", argv[1]);
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 		read_results = read(source_file, buffer, 1024);
 		destination_file = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (read_result > 0);
+	} while (read_results > 0);
 
 	free(buffer);
 	close_file_descriptor(source_file);
