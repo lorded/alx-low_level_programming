@@ -6,17 +6,17 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-    /* Declare a temporary node pointer. */
-    dlistint_t *tmp;
+	/* Declare a temporary node pointer. */
+	dlistint_t *tmp;
 
-    while (head)
-    {
-        /* Store the next node in the temporary pointer. */
-        tmp = head->next;
-        /* Free the current node. */
-        free(head);
-        /* Move to the next node. */
-        head = tmp;
-    }
+	while (head)
+	{
+	/* Store the next node in the temporary pointer. */
+	tmp = head->next;
+	/* Free the current node. */
+	free(head);
+	/* Move to the next node. */
+	head = tmp;
+	}
 }
 
